@@ -1,20 +1,20 @@
 #!/bin/bash
-# 
+#
 # Since: April, 2016
 # Author: gerald.venzl@oracle.com
 # Description: Build script for building Oracle Database Docker images.
-# 
+#
 # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
-# 
+#
 # Copyright (c) 2014-2017 Oracle and/or its affiliates. All rights reserved.
-# 
+#
 
 usage() {
   cat << EOF
 
 Usage: buildDockerImage.sh -v [version] [-e | -s | -x] [-i] [-o] [Docker build option]
 Builds a Docker Image for Oracle Database.
-  
+
 Parameters:
    -v: version to build
        Choose one of: $(for i in $(ls -d */); do echo -n "${i%%/}  "; done)
@@ -115,7 +115,7 @@ else
 fi
 
 # Oracle Database Image Name
-IMAGE_NAME="oracle/database:$VERSION-$EDITION"
+IMAGE_NAME="ps-oracle/database:$VERSION-$EDITION"
 
 # Go into version folder
 cd $VERSION
@@ -173,11 +173,10 @@ BUILD_ELAPSED=`expr $BUILD_END - $BUILD_START`
 echo ""
 
 cat << EOF
-  Oracle Database Docker Image for '$EDITION' version $VERSION is ready to be extended: 
-    
+  Oracle Database Docker Image for '$EDITION' version $VERSION is ready to be extended:
+
     --> $IMAGE_NAME
 
   Build completed in $BUILD_ELAPSED seconds.
-  
-EOF
 
+EOF
