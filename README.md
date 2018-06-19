@@ -44,3 +44,11 @@ For community support, discussions and feedback about the provided Dockerfiles v
 
 ## Community Contributions
  - [Oracle Forms and Reports](https://github.com/oracle/docker-images/issues/212)
+ 
+ 
+## Build docker Image cli 
+
+``` 
+./buildDockerImage.sh -v 11.2.0.2 -x
+```
+ 
